@@ -14,5 +14,5 @@ model Subject {
   id      String @id @default(uuid())
   name    String @unique
   teacher String
-  grades  Int
+  grades  Float
 }
