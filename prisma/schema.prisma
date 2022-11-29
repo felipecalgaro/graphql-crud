@@ -19,5 +19,5 @@ model Teacher {
   subjectId String  @unique
   name      String
   age       Int
-  subject   Subject @relation(fields: [subjectId], references: [id])
+  subject   Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
 }
