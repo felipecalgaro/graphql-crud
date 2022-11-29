@@ -1,4 +1,5 @@
 import { ObjectType, Field, ID } from 'type-graphql';
+import { Teacher } from './teacher-model';
 
 @ObjectType()
 export class Subject {
@@ -7,9 +8,6 @@ export class Subject {
 
   @Field()
   name: string;
-
-  @Field()
-  teacher: string;
 
   @Field()
   grades: number;

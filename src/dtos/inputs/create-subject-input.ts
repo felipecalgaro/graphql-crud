@@ -6,8 +6,5 @@ export class CreateSubjectInput {
   name: string;
 
   @Field()
-  teacher: string;
-
-  @Field()
   grades: number;
 }

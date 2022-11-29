@@ -6,11 +6,17 @@
 input CreateSubjectInput {
   grades: Float!
   name: String!
-  teacher: String!
+}
+
+input CreateTeacherInput {
+  age: Int!
+  name: String!
+  subjectId: String!
 }
 
 type Mutation {
   createSubject(data: CreateSubjectInput!): Subject!
+  createTeacher(data: CreateTeacherInput!): Teacher!
   deleteSubject(id: String!): Subject!
   updateGrades(data: UpdateGradesInput!): Subject!
 }
@@ -18,13 +24,24 @@ type Mutation {
 type Query {
   getSubjectById(id: String!): Subject!
   getSubjects: [Subject!]!
+  getTeacherById(id: String!): Teacher!
+  getTeacherBySubjectId(subjectId: String!): Teacher!
+  getTeachers: [Teacher!]!
 }
 
 type Subject {
   grades: Float!
   id: ID!
   name: String!
-  teacher: String!
+  teacher: Teacher!
+}
+
+type Teacher {
+  age: Int!
+  id: ID!
+  name: String!
+  subject: Subject!
+  subjectId: String!
 }
 
 input UpdateGradesInput {
